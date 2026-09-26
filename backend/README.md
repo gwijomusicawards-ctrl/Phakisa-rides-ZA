@@ -1,31 +1,10 @@
-# Production backend contract
+# Phakisa Rides ZA Backend
 
-Use Firebase Cloud Functions, Cloud Run, or another secure backend.
+Developed by Otsile Graphics Co.
 
-Required server-side functions:
-- createRide()
-- findNearbyDrivers()
-- acceptRide()
-- cancelRide()
-- startTrip()
-- completeTrip()
-- updateDriverLocation()
-- calculateFare()
-- createPaymentIntent()
-- paymentWebhook()
-- sendPushNotification()
-- rateRide()
-- verifyDriverDocuments()
+Render settings:
+- Root Directory: `backend`
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `gunicorn app:app`
 
-Suggested Firestore collections:
-users/{uid}
-drivers/{uid}
-vehicles/{vehicleId}
-rides/{rideId}
-driver_locations/{uid}
-payments/{paymentId}
-ratings/{ratingId}
-promos/{promoId}
-support_tickets/{ticketId}
-
-Never trust fare totals, driver identity, payment state, or trip state sent only from the mobile client. Validate them on the server.
+This is the backend foundation. It uses in-memory storage, so persistent database, authentication, secure payments, production geospatial matching, notifications and other production services still need to be connected before a real public launch.
